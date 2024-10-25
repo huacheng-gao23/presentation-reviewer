@@ -1,5 +1,6 @@
 // App.tsx
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import SignUpPage from './pages/SignUp';
 
 // Hero/Landing Page Component
 const HeroPage = () => {
@@ -29,14 +30,14 @@ const HeroPage = () => {
               Remove ambiguity and deliver with confidence
             </p>
             <p className="text-lg text-surface-500 dark:text-surface-400">
-              Our AI analyzes your presentation, anticipates questions, and helps you 
+              Our AI analyzes your presentation, anticipates questions, and helps you
               prepare for every scenario before you step into the meeting room.
             </p>
           </div>
 
           {/* CTA Button */}
           <div className="pt-8">
-            <button 
+            <button
               onClick={() => navigate('/pricing')}
               className="px-8 h-14 bg-primary-500 hover:bg-primary-600 text-white rounded-xl 
                 font-medium shadow-lg hover:shadow-xl transition-all duration-150 
@@ -60,6 +61,8 @@ const HeroPage = () => {
 
 // Pricing Page Component
 const PricingPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-surface-50 to-surface-100 dark:from-surface-900 dark:to-surface-800">
       {/* Navbar */}
@@ -103,7 +106,9 @@ const PricingPage = () => {
                 Basic AI analysis
               </li>
             </ul>
-            <button className="w-full h-12 border border-primary-500 text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/10 rounded-lg font-medium transition-colors duration-150">
+            <button
+              onClick={() => navigate('/signup?tier=free')}
+              className="w-full h-12 border border-primary-500 text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/10 rounded-lg font-medium transition-colors duration-150">
               Get Started
             </button>
           </div>
@@ -138,7 +143,9 @@ const PricingPage = () => {
                 Custom templates
               </li>
             </ul>
-            <button className="w-full h-12 bg-primary-500 hover:bg-primary-600 text-white rounded-lg font-medium transition-colors duration-150">
+            <button
+              onClick={() => navigate('/signup?tier=pro')}
+              className="w-full h-12 bg-primary-500 hover:bg-primary-600 text-white rounded-lg font-medium transition-colors duration-150">
               Start Trial
             </button>
           </div>
@@ -170,7 +177,9 @@ const PricingPage = () => {
                 Priority support
               </li>
             </ul>
-            <button className="w-full h-12 border border-primary-500 text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/10 rounded-lg font-medium transition-colors duration-150">
+            <button
+              onClick={() => navigate('/signup?tier=enterprise')}
+              className="w-full h-12 border border-primary-500 text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/10 rounded-lg font-medium transition-colors duration-150">
               Contact Sales
             </button>
           </div>
@@ -187,6 +196,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HeroPage />} />
         <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
       </Routes>
     </Router>
   );
