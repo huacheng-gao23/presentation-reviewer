@@ -1,0 +1,12 @@
+// tsconfig.node.json
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "outDir": "./dist-node"  // Add this to handle emit
+  },
+  "include": ["vite.config.ts"]
+}

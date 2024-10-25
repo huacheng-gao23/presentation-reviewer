@@ -1,0 +1,24 @@
+# deploy.yml
+service: presentation-reviewer
+
+image: huacheng23/presentation-reviewer
+
+servers:
+  web:
+    hosts:
+      - 5.161.121.234  # Your server IP
+
+proxy:
+  ssl: true  # Enable if you want HTTPS
+  hosts: 
+    - fiftystarstravel.com
+    - www.fiftystarstravel.com
+  app_port: 3000  # This tells Kamal's Traefik to forward to port 3000
+
+registry:
+  username: huacheng23
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+builder:
+  arch: amd64
