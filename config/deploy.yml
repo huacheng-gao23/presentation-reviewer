@@ -9,7 +9,7 @@ servers:
       - 5.161.121.234  # Your server IP
 
 proxy:
-  ssl: true  # Enable if you want HTTPS
+  ssl: false  # Enable if you want HTTPS
   hosts: 
     - fiftystarstravel.com
     - www.fiftystarstravel.com
