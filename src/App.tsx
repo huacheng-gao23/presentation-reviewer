@@ -1,6 +1,7 @@
 // App.tsx
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import SignUpPage from './pages/SignUp';
+import BenefitsSection from './pages/hero/BenefitsSection';
 
 // Hero/Landing Page Component
 const HeroPage = () => {
@@ -53,6 +54,9 @@ const HeroPage = () => {
               <span className="text-sm">Presentation Preview Placeholder</span>
             </div>
           </div>
+
+          {/* Benefits Section */}
+          <BenefitsSection />
         </div>
       </main>
     </div>
