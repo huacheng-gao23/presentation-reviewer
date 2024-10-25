@@ -2,6 +2,8 @@
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import SignUpPage from './pages/SignUp';
 import BenefitsSection from './pages/hero/BenefitsSection';
+import ProcessFlow from './pages/hero/ProcessFlow';
+import AIReviewChecklist from './pages/hero/AIReviewChecklist';
 
 // Hero/Landing Page Component
 const HeroPage = () => {
@@ -47,16 +49,31 @@ const HeroPage = () => {
             </button>
           </div>
 
+          {/* Benefits Section */}
+          <BenefitsSection />
+
+          {/* AI Review Checklist */}
+          <AIReviewChecklist />
+
           {/* Visual Element */}
           <div className="mt-16 p-8 rounded-2xl bg-surface-100 dark:bg-surface-800 shadow-xl 
             border border-surface-200 dark:border-surface-700">
-            <div className="h-64 flex items-center justify-center text-surface-400 dark:text-surface-500">
-              <span className="text-sm">Presentation Preview Placeholder</span>
+            <div className="flex items-center justify-center text-surface-400 dark:text-surface-500">
+              {/* Process Flow */}
+              <ProcessFlow />
             </div>
           </div>
 
-          {/* Benefits Section */}
-          <BenefitsSection />
+          {/* CTA Button */}
+          <div className="pt-8">
+            <button
+              onClick={() => navigate('/pricing')}
+              className="px-8 h-14 bg-primary-500 hover:bg-primary-600 text-white rounded-xl 
+                font-medium shadow-lg hover:shadow-xl transition-all duration-150 
+                text-lg animate-slide-in">
+              Explore Plans and Try Now
+            </button>
+          </div>
         </div>
       </main>
     </div>

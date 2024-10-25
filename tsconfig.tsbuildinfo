@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/buttonshowcase.tsx","./src/main.tsx","./src/vite-env.d.ts"],"version":"5.6.3"}
+{"root":["./src/app.tsx","./src/buttonshowcase.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/pages/signup.tsx","./src/pages/hero/aireviewchecklist.tsx","./src/pages/hero/benefitssection.tsx","./src/pages/hero/processflow.tsx"],"version":"5.6.3"}
